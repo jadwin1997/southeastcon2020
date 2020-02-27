@@ -48,7 +48,7 @@
 // DEBOUNCE_DELAY is 1ms shorter than 25ms to include the processing
 //     time for the debounce (less than 1ms, but this makes sure that
 //     25ms down and 25ms up works!
-#define DEBOUNCE_DELAY   24       // debounce time; increase if output flickers
+#define DEBOUNCE_DELAY   25       // debounce time; increase if output flickers
 #define FLASH_INTERVAL   50       // how long to flash LEDs on wrong push
 
 // PIN_OFFSET is the first pin used for this project. Every even pin
@@ -63,9 +63,9 @@
 //    This allows a single bus wire to tie 2x wires of each of
 //    of the 10x buttons together to one connection - ground.
 #define NUM_BUTTONS   10    // 10 digits - zero through nine
-#define PIN_OFFSET    26    // Mega2560 first pin used
-#define LED_PIN(n)    (PIN_OFFSET + (2*n))  // LEDs on the even pins
-#define BUTTON_PIN(n) (LED_PIN(n) + 1)      // buttons on the odd pins
+#define PIN_OFFSET    0    // Mega2560 first pin used
+#define LED_PIN(n)    n+10  // LEDs on the even pins
+#define BUTTON_PIN(n) n      // buttons on the odd pins
 
 struct {
    int buttonState;                 // the current reading from the input pin
